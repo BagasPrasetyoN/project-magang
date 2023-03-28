@@ -12,7 +12,7 @@ class User_model extends Model
         $query = DB::table('users')
             ->select('*')
             ->where(array(  'users.username'	=> $username,
-                            'users.password'    => sha1($password)))
+                            'users.password'    => ($password)))
             ->orderBy('id_user','DESC')
             ->first();
         return $query;

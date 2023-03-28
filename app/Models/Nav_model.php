@@ -30,15 +30,6 @@ class Nav_model extends Model
     }
 
     // Main page
-    public function nav_materi()
-    {
-        $query = DB::table('kategori_download')
-            ->orderBy('kategori_download.urutan','ASC')
-            ->get();
-        return $query;
-    }
-
-    // Main page
     public function nav_layanan()
     {
         $query = DB::table('berita')

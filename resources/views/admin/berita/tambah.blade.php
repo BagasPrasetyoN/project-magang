@@ -80,13 +80,6 @@
   </div>
 </div>
 
-<div class="row form-group">
-  <label class="col-md-3 text-right">Icon</label>
-  <div class="col-md-6">
-    <input type="text" name="icon" class="form-control" placeholder="Icon berita/profil/layanan" value="{{ old('icon') }}">
-    <small class="text-success">Icon menggunakan Fontawesome. Kunjungi <a href="https://fontawesome.com/" target="_blank">https://fontawesome.com/</a></small>
-  </div>
-</div>
 
 <div class="row form-group">
   <label class="col-md-3 text-right"></label>

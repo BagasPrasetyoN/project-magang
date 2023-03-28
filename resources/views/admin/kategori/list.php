@@ -2,7 +2,7 @@
   <?php include('tambah.php') ?>
 </p>
 
-<table class="table table-bordered" id="example1">
+<table class="table table-bordered" id="example12">
 <thead>
 <tr>
     <th width="5%">NO</th>

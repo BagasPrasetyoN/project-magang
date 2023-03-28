@@ -1,86 +1,118 @@
 <!--Slider Start-->
-         <section id="home-slider" class="owl-carousel owl-theme wf100">
-            <?php foreach($slider as $slider) { ?>
-            <div class="item">
-               <div class="slider-caption h3slider">
-                  <div class="container">
-                     <?php if($slider->status_text=="Ya") { ?>
-                     <strong>{{ strip_tags($slider->isi) }}</strong>
-                     <h1>{{ $slider->judul_galeri }}</h1>
-                     <a href="{{ $slider->website }}">Baca detail</a>
-                     <?php } ?>
-                  </div>
-               </div>
-               <img src="{{ asset('assets/upload/image/'.$slider->gambar) }}" alt=""> 
-            </div>
-            <?php } ?>
-         </section>
-         <!--Slider End--> 
-         <!--Service Area Start-->
-         <section class="donation-join wf100">
-            <div class="container text-center">
-               <div class="row">
-                  
-                  <?php foreach($layanan as $layanan) { ?>
-                     <div class="col-md-4 col-sm-12">
-                        <br>
-                        <img src="{{ asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid">
-                        <div class="volbox">
-                           <h6>{{ $layanan->judul_berita }}</h6>
-                           <p>{{ $layanan->keywords }}</p>
-                           <a href="{{ asset('berita/layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
-                        </div>
-                     </div>
-                     <!--box  end--> 
-                  <?php } ?>
-                  
-               </div>
-            </div>
-         </section>
-         <!--Service Area End--> 
-         <section class="wf100 about">
-            <!--About Txt Video Start-->
-            <div class="about-video-section wf100">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-7">
-                        <div class="about-text">
-                           <h5>TENTANG KAMI</h5>
-                           <h2>{{ $site_config->nama_singkat }}</h2>
-                           <?php echo $site_config->tentang ?>
 
-                           <a href="{{ asset('kontak') }}" class="btn btn-info btn-lg">Kontak Kami</a> 
+<section id="home-slider" class="owl-carousel owl-theme wf100">
+   @php
+      date_default_timezone_set("Asia/Jakarta");
+      $waktu = new DateTime();
+      $jam = (int)$waktu->format('H');
+      $hari = $waktu->format('l');
+   @endphp
+   
+   <?php foreach($slider as $slider) { ?>
+   <div class="item">
+      @if($hari === 'Tuesday')
+         @if($jam >= 8 && $jam <= 13)
+            <div class="jatim" style="background-color: #CD0E0A; padding: 10px; text-align:center">
+               <h6 style="margin:0; color:rgb(255, 255, 255)">Pelayanan Bank Jatim di Kecamatan Lowokwaru Sedang Buka</h6>
+            </div>
+         @else
+            <div class="jatim" style="background-color: #CD0E0A; padding: 10px; text-align:center">
+               <h6 style="margin:0; color:rgb(255, 255, 255)">Pelayanan Bank Jatim di Kecamatan Lowokwaru Buka Setiap Hari Selasa Pukul 08.00 - 13.00</h6>
+            </div>
+         @endif
+      @else
+         <div class="jatim" style="background-color: #CD0E0A; padding: 10px; text-align:center">
+            <h6 style="margin:0; color:rgb(255, 255, 255)">Pelayanan Bank Jatim di Kecamatan Lowokwaru Buka Setiap Hari Selasa Pukul 08.00 - 13.00</h6>
+         </div>
+      @endif
+       
+      <div class="slider-caption h3slider">
+         <div class="container">
+            <?php if($slider->status_text=="Ya") { ?>
+            <strong>{{ strip_tags($slider->isi) }}</strong>
+            <h1>{{ $slider->judul_galeri }}</h1>
+            <?php } ?>
+         </div>
+      </div>
+      <img src="{{ asset('assets/upload/image/'.$slider->gambar) }}" alt=""> 
+   </div>
+   <?php } ?>
+</section>
+<!--Slider End--> 
+<!--Service Area Start-->
+<section class="donation-join wf100">
+   <div class="container text-center">
+      <div class="row">
+         <?php foreach($terupdate as $terupdate) { ?>
+            <div class="col-md-4 col-sm-12">
+               <br>
+               <img src="{{ asset('assets/upload/image/thumbs/'.$terupdate->gambar) }}" alt="{{ $terupdate->judul_berita }}" class="img img-thumbnail img-fluid">
+               <div class="volbox">
+                  <h6>{{ $terupdate->judul_berita }}</h6>
+                  <p>{{ $terupdate->keywords }}</p>
+                  
+               </div>
+            </div>
+            <!--box  end--> 
+         <?php } ?>
+         
+      </div>
+   </div>
+</section>
+<!--Service Area End--> 
+
+<!--Card Slider Start-->
+<section class="testimonials-section bg-white wf100 p80">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="section-title-2 m-auto">
+            <h2>#Lowokwaru</h2>
+         </div>
+         <div class="col-md-12 col-sm-12" style="background-color: #00923F; padding:30px 50px">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active d-flex">
+                     <div class="row justify-content-center p-5" style="background-color:white">
+                        <div class="col-md-4 col-sm-12">
+                           <img class="d-block" src="assets/img/img-slider.png" alt="First slide" style="width: 100%">
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 align-self-center">
+                           <h5 class="font-weight-normal " style="text-align: justify; font-size:20px">Kampung Warna Warni Malang atau yang dikenal juga dengan nama Kampung Jodipan ini termasuk kampung wisata pertama di Kota Malang. Setiap sudut kampung ini dihiasi dengan berbagai warna cerah dan terang yang mampu menarik perhatian.</h5>
                         </div>
                      </div>
-                     <div class="col-lg-5">
-                        <a href="#"><img src="{{ asset('assets/upload/image/'.$site_config->gambar) }}" alt="{{ $site_config->nama_singkat }}" class="img img-fluid img-thumbnail">
+                  </div>
+                  <div class="carousel-item d-flex">
+                  <div class="row justify-content-center p-5" style="background-color:white">
+                        <div class="col-md-4 col-sm-12">
+                           <img class="d-block" src="assets/img/img-slider2.png" alt="First slide" style="width: 100%">
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 align-self-center">
+                           <h5 class="font-weight-normal " style="text-align: justify; font-size:20px">Taman Alun-alun Tugu Kota Malang merupakan salah satu simbol landmark Kota Malang, Jawa Timur. </h5>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item d-flex">
+                  <div class="row justify-content-center p-5" style="background-color:white">
+                        <div class="col-md-4 col-sm-12">
+                           <img class="d-block" src="assets/img/img-slider3.png" alt="First slide" style="width: 100%">
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 align-self-center">
+                           <h5 class="font-weight-normal " style="text-align: justify; font-size:20px">Alun-alun ini juga dilengkapi dengan lampu-lampu cantik yang bersinar di setiap malam. Wisatawan yang berkunjung bisa menikmatinya dengan hanya sekadar duduk-duduk santai, atau memanfaatkan indahnya alun-alun untuk berfoto </h5>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
-            <!--About Txt Video End--> 
-            <!--About Section Start-->
-         <section class="home2-about wf100 p100 gallery" style="background: url({{ asset('assets/aws/images/news-artilcesbg.jpg') }}) no-repeat; background-size: cover;">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-5">
-                        <div class="video-img"> <a href="https://youtu.be/{{ $video->video }}" data-rel="prettyPhoto" title="{{ $video->judul }}"><i class="fas fa-play"></i></a> <img src="{{ asset('assets/upload/image/'.$video->gambar) }}" alt=""> </div>
-                  </div>
-                  <div class="col-md-7">
-                     <div class="h2-about-txt">
-                        <h3>Webinar</h3>
-                        <h2>{{ $video->judul }}</h2>
-                        <p><?php echo strip_tags($video->keterangan) ?></p>
-                        <a class="aboutus" href="#">Lihat Detail</a> 
-                     </div>
-                  </div>
-               </div>
-            </div>
-            
-         </section>
-         <!--About Section End--> 
-         
-         <!--Blog Start-->
+         </div>
+      </div>
+   </div>
+</section>
+<!--Card Slider End--> 
+
+{{-- Berita Awal --}}
 <section class="h2-news wf100 p80 blog">
    <div class="blog-grid">
       <div class="container">
@@ -120,37 +152,3 @@
       </div>
    </div>
 </section>
-<!--Blog End--> 
-
-<!--Testimonials Start-->
-<section class="testimonials-section bg-white wf100 p80">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-12">
-            <div class="section-title-2 text-center">
-               <h2>Download</h2>
-            </div>
-            <div id="testimonials" class="owl-carousel owl-theme">
-               <?php 
-               $kategori_download = DB::table('kategori_download')
-                    ->orderBy('kategori_download.urutan','ASC')
-                    ->get();
-               foreach($kategori_download as $kategori_download) {
-               ?>
-               <!--testimonials box start-->
-               <div class="item">
-                  <h4><?php echo $kategori_download->nama_kategori_download ?></h4>
-                  <hr>
-                  <?php echo \Illuminate\Support\Str::limit(strip_tags($kategori_download->keterangan), 100, $end='...') ?>
-                  <div class="tuser">
-                     <a href="{{ asset('download/kategori/'.$kategori_download->slug_kategori_download) }}" class="btn btn-success"><i class="fa fa-laptop"></i> Lihat Detail</a>
-                  </div>
-               </div>
-               <!--testimonials box End--> 
-               <?php } ?>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
-<!--Testimonials End--> 

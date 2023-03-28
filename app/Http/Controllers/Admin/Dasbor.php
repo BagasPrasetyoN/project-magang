@@ -23,7 +23,7 @@ class Dasbor extends Controller
     	$mysite = new Konfigurasi_model();
 		$site 	= $mysite->listing();
        
-		$data = array(  'title'     => $site->namaweb.' - '.$site->tagline,
+		$data = array(  'title'     => $site->namaweb.'  '.$site->tagline,
                         'content'   => 'admin/dasbor/index'
                     );
         return view('admin/layout/wrapper',$data);

@@ -53,15 +53,11 @@
     <input type="text" name="tagline" placeholder="Company tagline/motto" value="<?php echo $site->tagline ?>" class="form-control">
     </div>
     
-    <div class="form-group">
-    <label>Company tagline/motto 2</label>
-    <input type="text" name="tagline2" placeholder="Company tagline/motto 2" value="<?php echo $site->tagline2 ?>" class="form-control">
-    </div>
 
     <div class="form-group">
     <label>Website address</label>
     <input type="url" name="website" placeholder="{{ asset('/') }}" value="<?php echo $site->website ?>" class="form-control">
-    </div>
+        </div>
     
     <div class="form-group">
     <label>Official email</label>
@@ -128,36 +124,6 @@
 </div>
 
 <div class="col-md-6">
-    <h3>Cara Pemesanan Produk</h3><hr>
-    <div class="form-group">
-    <label>Pilih Cara Pemesanan Produk</label>
-    <select name="cara_pesan" class="form-control">
-        <option value="Formulir Pemesanan">Formulir Pemesanan</option>
-        <option value="Keranjang Belanja" <?php if($site->cara_pesan=='Keranjang Belanja') { echo 'selected'; } ?>>Keranjang Belanja</option>
-    </select>
-    </div>
-
-    <h3>Text di bawah peta dan link downloadnya</h3><hr>
-    <div class="form-group">
-    <label>Text bawah peta</label>
-    <input type="text" name="text_bawah_peta" placeholder="Text bawah peta" value="<?php echo $site->text_bawah_peta ?>" class="form-control">
-    </div>
-    
-    <div class="form-group">
-    <label>Link text di bawah peta <i class="fa fa-link"></i></label>
-    <input type="text" name="link_bawah_peta" placeholder="Link text di bawah peta" value="<?php echo $site->link_bawah_peta ?>" class="form-control">
-    </div>
-    
-	<h3>Modul SEO (Search Engine Optimization)</h3><hr>
-	<div class="form-group">
-    <label>Keywords (Keyword search for Google, Bing, etc)</label>
-    <textarea name="keywords" rows="3" class="form-control" placeholder="Kata kunci / keywords"><?php echo $site->keywords ?></textarea>
-    </div>
-    
-    <div class="form-group">
-    <label>Metatext</label>
-    <textarea name="metatext" rows="5" class="form-control" placeholder="Kode metatext"><?php echo $site->metatext ?></textarea>
-    </div>
     
     <h3>Google Map</h3><hr>
     <div class="form-group">

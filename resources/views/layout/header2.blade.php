@@ -14,8 +14,6 @@ $nav_profil           = $myprofil->nav_profil();
         <h1 class="text-light"><a href="{{ asset('/') }}"><span>
           <img src="{{ asset('public/upload/image/'.$site->logo) }}" alt="Nitrico" style="min-height: 50px; width: auto;">
         </span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="{{ asset('/') }}"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu d-none d-lg-block">

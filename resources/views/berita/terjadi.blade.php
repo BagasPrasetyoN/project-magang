@@ -17,7 +17,7 @@
             </div>
          </div>
          <div class="col-lg-5">
-            <a href="#"><img src="{{ asset('assets/upload/image/'.$berita->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
+            <a href=""><img src="{{ asset('assets/upload/image/'.$berita->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
          </div>
          
          

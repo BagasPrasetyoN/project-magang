@@ -18,14 +18,8 @@
 		<select name="halaman" class="form-control">
 			<option value="Berita">Berita</option>
 			<option value="AWS" <?php if($heading->halaman=="AWS") { echo 'selected'; } ?>>AWS Indonesia</option>
-			<option value="Team" <?php if($heading->halaman=="Team") { echo 'selected'; } ?>>Board and Team</option>
 			<option value="Kontak" <?php if($heading->halaman=="Kontak") { echo 'selected'; } ?>>Halaman Kontak</option>
-			<option value="Aksi" <?php if($heading->halaman=="Aksi") { echo 'selected'; } ?>>Halaman Aksi</option>
-			<option value="Materi" <?php if($heading->halaman=="Materi") { echo 'selected'; } ?>>Materi</option>
 			<option value="Dokumen" <?php if($heading->halaman=="Dokumen") { echo 'selected'; } ?>>Dokumen</option>
-			<option value="Layanan" <?php if($heading->halaman=="Layanan") { echo 'selected'; } ?>>Layanan</option>
-			<option value="Provider" <?php if($heading->halaman=="Provider") { echo 'selected'; } ?>>Provider</option>
-			<option value="Terjadi" <?php if($heading->halaman=="Terjadi") { echo 'selected'; } ?>>Apa yang terjadi?</option>
 		</select>
 	</div>
 </div>

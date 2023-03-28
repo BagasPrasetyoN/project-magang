@@ -27,7 +27,7 @@ $bg   = DB::table('heading')->where('halaman','Berita')->orderBy('id_heading','D
             </div>
          </div>
          <div class="col-lg-6">
-            <a href="#"><img src="{{ asset('assets/upload/image/'.$read->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
+            <a href=""><img src="{{ asset('assets/upload/image/'.$read->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
          </div>
          
          

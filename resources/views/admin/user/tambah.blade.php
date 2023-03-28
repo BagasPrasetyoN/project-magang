@@ -44,7 +44,6 @@
 					<div class="col-sm-9">
 						<select name="akses_level" class="form-control">
 							<option value="Admin">Admin</option>
-							<option value="User">User</option>
 						</select>
 					</div>
 				</div>

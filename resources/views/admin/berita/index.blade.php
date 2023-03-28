@@ -27,39 +27,6 @@
 <div class="clearfix"><hr></div>
 
 <form action="{{ asset('admin/berita/proses') }}" method="post" accept-charset="utf-8">
-<input type="hidden" name="pengalihan" value="<?php echo url()->full(); ?>">
-<?php $site   = DB::table('konfigurasi')->first(); ?>
-{{ csrf_field() }}
-<div class="row">
-  <div class="col-md-12">
-
-    <div class="input-group">
-      <button class="btn btn-default btn-sm" type="submit" name="hapus" onClick="check();" >
-          <i class="fa fa-trash"></i>
-        </button> 
-      <select name="id_kategori" class="form-control form-control-sm">
-        <?php 
-        $site           = DB::table('kategori')->get();
-        foreach($kategori as $kategori) { ?>
-          <option value="<?php echo $kategori->id_kategori ?>"><?php echo $kategori->nama_kategori ?></option>
-        <?php } ?>
-      </select>
-      <span class="input-group-btn" >
-        <button type="submit" class="btn btn-info btn-sm btn-flat" name="update">Update</button>
-        
-      
-
-        <button class="btn btn-warning btn-sm" type="submit" name="draft" onClick="check();" >
-          <i class="fa fa-times"></i> Draft
-        </button>
-
-        <button class="btn btn-primary btn-sm" type="submit" name="publish" onClick="check();" >
-          <i class="fa fa-check"></i> Publish
-        </button>
-      </span>
-    </div>
-  </div>
-    </div>
 <div class="table-responsive mailbox-messages">
 <table class="display table table-bordered" cellspacing="0" width="100%">
 <thead>
@@ -108,11 +75,6 @@
       <small>
         <br>Posted: <?php echo date('d M Y H:i: s',strtotime($berita->tanggal_post)) ?>
         <br>Published: <?php echo date('d M Y H:i: s',strtotime($berita->tanggal_publish)) ?>
-        <?php if($berita->jenis_berita=="Promo") { ?>
-          <br>Promo: <span class="text-danger"><strong><?php echo date('d M Y',strtotime($berita->tanggal_mulai)) ?> s/d <?php echo date('d M Y ',strtotime($berita->tanggal_selesai)) ?></strong></span>
-        <?php } ?>
-        <br>Urutan: <?php echo $berita->urutan ?>
-        <br>Icon: <i class="<?php echo $berita->icon ?>"></i> <?php echo $berita->icon ?>
         <br>Tgl posting: <?php echo date('d-m-Y',strtotime($berita->tanggal_publish)) ?>
         <br>Jenis: <a href="{{ asset('admin/berita/jenis_berita/'.$berita->jenis_berita) }}">
     <?php echo $berita->jenis_berita ?><sup><i class="fa fa-link"></i></sup>

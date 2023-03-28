@@ -86,12 +86,6 @@
   </div>
 </div>
 
-<div class="row form-group">
-  <label class="col-md-3 text-right">Icon berita/profil/layanan</label>
-  <div class="col-md-6">
-    <input type="text" name="icon" class="form-control" placeholder="Icon berita/profil/layanan" value="<?php echo $berita->icon ?>">
-  </div>
-</div>
 
 <div class="row form-group">
   <label class="col-md-3 text-right"></label>

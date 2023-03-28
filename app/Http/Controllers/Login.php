@@ -46,7 +46,7 @@ class Login extends Controller
     }
 
     // Forgot password
-    public function fogot()
+    public function lupa()
     {
     	$site = DB::table('konfigurasi')->first();
        	$data = array(  'title'     => 'Lupa Password',

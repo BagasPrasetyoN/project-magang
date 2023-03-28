@@ -23,23 +23,6 @@
 <form action="{{ asset('admin/galeri/proses') }}" method="post" accept-charset="utf-8">
   {{ csrf_field() }}
 <div class="row">
-  <div class="col-md-4">
-    <div class="input-group">
-      <span class="input-group-btn" >
-        <button class="btn btn-danger btn-sm" type="submit" name="hapus" onClick="check();" >
-          <i class="fa fa-trash"></i>
-        </button> 
-      </span>
-      <select name="id_kategori_galeri" class="form-control form-control-sm">
-        <?php foreach($kategori_galeri as $kategori_galeri) { ?>
-          <option value="<?php echo $kategori_galeri->id_kategori_galeri ?>"><?php echo $kategori_galeri->nama_kategori_galeri ?></option>
-        <?php } ?>
-      </select>
-      <span class="input-group-btn" >
-        <button type="submit" class="btn btn-info btn-sm btn-flat" name="update">Update</button> 
-      </span>
-    </div>
-  </div>
 
   <div class="col-md-8">
     <div class="btn-group">
@@ -52,7 +35,7 @@
     </div>
     <div class="clearfix"><hr></div>
     <div class="table-responsive mailbox-messages">
-      <table id="example1" class="display table table-bordered table-sm" cellspacing="0" width="100%">
+      <table id="example12" class="display table table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
           <tr class="bg-info">
             <th width="5%" class="text-center">

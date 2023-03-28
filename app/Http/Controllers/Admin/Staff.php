@@ -174,7 +174,6 @@ class Staff extends Controller
                 'slug_staff'            => $slug_staff,
                 'jabatan'               => $request->jabatan,
                 'pendidikan'            => $request->pendidikan,
-                'expertise'             => $request->expertise,
                 'email'                 => $request->email,
                 'telepon'               => $request->telepon,
                 'isi'                   => $request->isi,
@@ -192,7 +191,6 @@ class Staff extends Controller
                 'slug_staff'            => $slug_staff,
                 'jabatan'               => $request->jabatan,
                 'pendidikan'            => $request->pendidikan,
-                'expertise'             => $request->expertise,
                 'email'                 => $request->email,
                 'telepon'               => $request->telepon,
                 'isi'                   => $request->isi,
@@ -236,7 +234,6 @@ class Staff extends Controller
                 'slug_staff'            => $slug_staff,
                 'jabatan'               => $request->jabatan,
                 'pendidikan'            => $request->pendidikan,
-                'expertise'             => $request->expertise,
                 'email'                 => $request->email,
                 'telepon'               => $request->telepon,
                 'isi'                   => $request->isi,
@@ -254,7 +251,6 @@ class Staff extends Controller
                 'slug_staff'            => $slug_staff,
                 'jabatan'               => $request->jabatan,
                 'pendidikan'            => $request->pendidikan,
-                'expertise'             => $request->expertise,
                 'email'                 => $request->email,
                 'telepon'               => $request->telepon,
                 'isi'                   => $request->isi,
@@ -264,7 +260,7 @@ class Staff extends Controller
                 'urutan'                => $request->urutan
             ]);
         }
-        return redirect('admin/staff')->with(['sukses' => 'Data telah ditambah']);
+        return redirect('admin/staff')->with(['sukses' => 'Data telah diubah']);
     }
 
     // Delete

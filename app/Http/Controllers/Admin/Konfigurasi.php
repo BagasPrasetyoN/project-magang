@@ -140,37 +140,11 @@ class Konfigurasi extends Controller
             'nama_twitter'      => $request->nama_twitter,
             'nama_instagram'    => $request->nama_instagram,
             'google_map'        => $request->google_map,
-            'text_bawah_peta'   => $request->text_bawah_peta,
-            'link_bawah_peta'   => $request->link_bawah_peta,
-            'cara_pesan'        => $request->cara_pesan,
             'id_user'           => Session()->get('id_user'),
         ]);
         return redirect('admin/konfigurasi')->with(['sukses' => 'Data telah diupdate']);
     }
 
-    // Proses
-    public function proses_email(Request $request)
-    {
-        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
-        request()->validate([
-                            'protocol'          => 'required',
-                            'smtp_host'          => 'required',
-                            'smtp_port'          => 'required',
-                            'smtp_timeout'       => 'required',
-                            'smtp_user'          => 'required',
-                            'smtp_pass'          => 'required'
-                            ]);
-       DB::table('konfigurasi')->where('id_konfigurasi',$request->id_konfigurasi)->update([
-            'protocol'          => $request->protocol,
-            'smtp_host'         => $request->smtp_host,
-            'smtp_port'         => $request->smtp_port,
-            'smtp_timeout'      => $request->smtp_timeout,
-            'smtp_user'         => $request->smtp_user,
-            'smtp_pass'         => $request->smtp_pass,
-            'id_user'           => Session()->get('id_user'),
-        ]);
-        return redirect('admin/konfigurasi/email')->with(['sukses' => 'Data setting email telah diupdate']);
-    }
 
     // logo
     public function proses_logo(Request $request)
@@ -298,44 +272,4 @@ class Konfigurasi extends Controller
         return redirect('admin/konfigurasi/gambar')->with(['sukses' => 'Gambar Banner telah diupdate']);
     }
 
-    // edit
-    public function proses_pembayaran(Request $request)
-    {
-        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
-        request()->validate([
-                            'judul_pembayaran'  => 'required',
-                            'isi_pembayaran'    => 'required',
-                            'gambar_pembayaran' => 'image|mimes:jpeg,png,jpg|max:8024',
-                            ]);
-        // UPLOAD START
-        $image                  = $request->file('gambar_pembayaran');
-        if(!empty($image)) {
-            $filenamewithextension  = $request->file('gambar_pembayaran')->getClientOriginalName();
-            $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-            $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
-            $destinationPath        = './assets/upload/image/thumbs/';
-            $img = Image::make($image->getRealPath(),array(
-                'width'     => 150,
-                'height'    => 150,
-                'grayscale' => false
-            ));
-            $img->save($destinationPath.'/'.$input['nama_file']);
-            $destinationPath = './assets/upload/image/';
-            $image->move($destinationPath, $input['nama_file']);
-            // END UPLOAD
-            DB::table('konfigurasi')->where('id_konfigurasi',$request->id_konfigurasi)->update([
-                'judul_pembayaran'  => $request->judul_pembayaran,
-                'isi_pembayaran'    => $request->isi_pembayaran,
-                'gambar_pembayaran' => $input['nama_file'],
-                'id_user'           => Session()->get('id_user'),
-            ]);
-        }else{
-             DB::table('konfigurasi')->where('id_konfigurasi',$request->id_konfigurasi)->update([
-                'judul_pembayaran'  => $request->judul_pembayaran,
-                'isi_pembayaran'    => $request->isi_pembayaran,
-                'id_user'           => Session()->get('id_user'),
-            ]);
-        }
-        return redirect('admin/konfigurasi/pembayaran')->with(['sukses' => 'Data metode pembayaran telah diupdate']);
-    }
 }

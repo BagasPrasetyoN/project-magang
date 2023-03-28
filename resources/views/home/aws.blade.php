@@ -14,20 +14,26 @@ $bg   = DB::table('heading')->where('halaman','AWS')->orderBy('id_heading','DESC
    <div class="about-video-section wf100">
       <div class="container">
          <div class="row">
-            <div class="col-lg-7">
+            <div class="col">
                <div class="about-text">
-                  <h2>{{ $site_config->nama_singkat }}</h2>
-                  <?php echo $site_config->tentang ?>
-                  
+                  <h2 style="color: #00923F">Visi dan Misi</h2>
+                  <p style="text-align: justify">
+                     "Mewujudkan Pelayanan Prima yang Akuntabel" 
+                  </p>
+                  <br>
+                  <p style="text-align: justify">
+                     1. Mewujudkan pelayanan masyarakat yang cepat, tepat dan akuntabel melalui tertib administrasi  <br> <br>
+                     2. Mewujudkan peningkatan kinerja aparatur kecamatan dan kelurahan 
+                  </p> <br><br><br>
+                  <h2 style="color: #00923F">Tujuan dan Sasaran</h2>
+                  <p>
+                     <?php echo $site_config->tentang?>
+                  </p>
                </div>
-            </div>
-            <div class="col-lg-5">
-               <a href="#"><img src="{{ asset('assets/upload/image/'.$site_config->gambar) }}" alt="{{ $site_config->nama_singkat }}" class="img img-fluid img-thumbnail"></a>
             </div>
          </div>
       </div>
    </div>
-   <!--About Txt Video End--> 
 <?php 
 $bg2   = DB::table('heading')->where('halaman','Team')->orderBy('id_heading','DESC')->first();
  ?>
@@ -41,59 +47,41 @@ $bg2   = DB::table('heading')->where('halaman','Team')->orderBy('id_heading','DE
 <section class="wf100 p30 events justify-content-center">
    <div class="event-grid-2">
       <div class="container">
-         <div class="row text-center  d-flex justify-content-center">
-            <?php foreach($kategori_staff as $kategori_staff) { 
+         <div class="row text-center justify-content-md-center">
+            <?php foreach($kategori_staff as $kategori_staff)  
                $id_kategori_staff = $kategori_staff->id_kategori_staff;
                $staff    = DB::table('staff')->where(array('status_staff'=>'Ya','id_kategori_staff'=>$id_kategori_staff))->orderBy('urutan','ASC')->get();
                if($staff) {
                ?>
             <div class="col-lg-12">
                <div class="about-text">
-             <h2>{{ $kategori_staff->nama_kategori_staff }}</h2>
-                  <p><?php echo nl2br($kategori_staff->keterangan) ?></p>
+             <h2 style="color: #00923F">{{ $kategori_staff->nama_kategori_staff }}</h2>
                   <br><br>
                </div>
             </div>
             <?php foreach($staff as $staff) { ?>
-            <!--Blog Post Start-->
-            <div class="col-lg-3 col-md-6">
-               <div class="event-post">
-                  <div class="event-thumb"> <a href="#"><i class="fas fa-link"></i></a> <img src="{{ asset('assets/upload/staff/'.$staff->gambar) }}" alt="{{ $staff->nama_staff }}"></div>
-                  <div class="event-txt">
-                     <h6><a href="#">{{ $staff->nama_staff }}</a></h6>
-                     <p class="venue"><span>{{ $staff->jabatan }}</span></p>
+               <div class="col-md-5 col-sm-12">
+                  <div class="card m-auto" style="width: 25rem;">
+                     <img class="card-img-top" src="{{ asset('assets/upload/staff/'.$staff->gambar) }}" alt="Card image cap">
+                     <div class="card-body text-center">
+                        <p class="card-text font-weight-bold">{{ $staff->nama_staff }}</p>
+                        <p>{{ $staff->pendidikan }}</p>
+                        <p class="card-text font-weight-bold">{{ $staff->jabatan }}</p>
+                     </div>
                   </div>
                </div>
-            </div>
             <!--Blog Post End--> 
             <?php } ?>
-            <?php }} ?>
+            <?php } ?>
+
+            <div class="col-lg-12" style="margin-top: 100px">
+               <button class="btn btn-success mb-5" style="background-color: #00923F; padding:15px 20px; border:none; border-radius: 8px">
+                  <a href="{{ url('/struktur_organisasi') }}" style="color:white; text-decoration:none">Lebih Detail</a>
+               </button>
+            </div>
+
       </div>
    </div>
 </section>
 <!--Causes End--> 
-
-<!--Service Area Start-->
- <section class="donation-join wf100 p80">
-   <div class="container text-center">
-      <p><br><br></p>
-      <h3>Layanan {{ website('namaweb') }}</h3>
-      <hr>
-      <div class="row">
-         <?php foreach($layanan as $layanan) { ?>
-            <div class="col-md-4 col-sm-6">
-               <div class="volbox">
-                  <img src="{{ asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid">
-                  <h6>{{ $layanan->judul_berita }}</h6>
-                  <p>{{ $layanan->keywords }}</p>
-                  <a href="{{ asset('layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
-               </div>
-            </div>
-            <!--box  end--> 
-         <?php } ?>
-      </div>
-   </div>
-</div>
-<br><br>
-</section>
 <div class="clearfix"><br><br></div>

@@ -126,7 +126,7 @@ class Berita extends Controller
 
         $data = array(  'title'             => 'Jenis Berita: '.$jenis_berita,
                         'berita'            => $berita,
-                        'kategori'   => $kategori,
+                        'kategori'          => $kategori,
                         'content'           => 'admin/berita/index'
                     );
         return view('admin/layout/wrapper',$data);
@@ -231,7 +231,6 @@ class Berita extends Controller
                 'jenis_berita'      => $request->jenis_berita,
                 'status_berita'     => $request->status_berita,
                 'gambar'            => $input['nama_file'],
-                'icon'              => $request->icon,
                 'keywords'          => $request->keywords,
                 'tanggal_publish'   => date('Y-m-d',strtotime($request->tanggal_publish)).' '.$request->jam_publish,
                 'urutan'            => $request->urutan,
@@ -247,7 +246,6 @@ class Berita extends Controller
                 'isi'               => $request->isi,
                 'jenis_berita'      => $request->jenis_berita,
                 'status_berita'     => $request->status_berita,
-                'icon'              => $request->icon,
                 'keywords'          => $request->keywords,
                 'tanggal_publish'   => date('Y-m-d',strtotime($request->tanggal_publish)).' '.$request->jam_publish,
                 'urutan'            => $request->urutan,
@@ -296,7 +294,6 @@ class Berita extends Controller
                 'jenis_berita'      => $request->jenis_berita,
                 'status_berita'     => $request->status_berita,
                 'gambar'            => $input['nama_file'],
-                'icon'              => $request->icon,
                 'keywords'          => $request->keywords,
                 'tanggal_publish'   => date('Y-m-d',strtotime($request->tanggal_publish)).' '.$request->jam_publish,
                 'urutan'            => $request->urutan
@@ -311,16 +308,15 @@ class Berita extends Controller
                 'isi'               => $request->isi,
                 'jenis_berita'      => $request->jenis_berita,
                 'status_berita'     => $request->status_berita,
-                'icon'              => $request->icon,
                 'keywords'          => $request->keywords,
                 'tanggal_publish'   => date('Y-m-d',strtotime($request->tanggal_publish)).' '.$request->jam_publish,
                 'urutan'            => $request->urutan
             ]);
         }
         if($request->jenis_berita=="Berita") {
-            return redirect('admin/berita')->with(['sukses' => 'Data telah ditambah']);
+            return redirect('admin/berita')->with(['sukses' => 'Data telah diubah']);
         }else{
-            return redirect('admin/berita/jenis_berita/'.$request->jenis_berita)->with(['sukses' => 'Data telah ditambah']);
+            return redirect('admin/berita/jenis_berita/'.$request->jenis_berita)->with(['sukses' => 'Data telah diubah']);
         }
     }
 

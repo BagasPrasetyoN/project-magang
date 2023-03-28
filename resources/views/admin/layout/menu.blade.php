@@ -69,48 +69,9 @@
             </ul>
           </li>
 
-          
-
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-calendar"></i>
-              <p>Event &amp; Agenda<i class="fas fa-angle-left right"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="{{ asset('admin/agenda') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Event &amp; Agenda</p></a>
-              </li>
-              <li class="nav-item"><a href="{{ asset('admin/agenda/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah Event &amp; Agenda</p></a>
-              </li>
-              <li class="nav-item"><a href="{{ asset('admin/kategori_agenda') }}" class="nav-link"><i class="fa fa-tags nav-icon"></i><p>Kategori Event &amp; Agenda</p></a>
-              </li>
-            </ul>
-          </li>
-          
-
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-download"></i>
-              <p>Download &amp; File<i class="fas fa-angle-left right"></i></p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="{{ asset('admin/download') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data File</p></a>
-              </li>
-              <li class="nav-item"><a href="{{ asset('admin/download/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah File</p></a>
-              </li>
-              <li class="nav-item"><a href="{{ asset('admin/kategori_download') }}" class="nav-link"><i class="fa fa-tags nav-icon"></i><p>Kategori File</p></a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="{{ asset('admin/video') }}" class="nav-link">
-              <i class="nav-icon fas fa-film"></i>
-              <p>Video Webinar</p>
-            </a>
-          </li>
 
           <!-- Website Content -->
-          <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Profil &amp; Layanan</span></li>
+          <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Profil &amp; Berita Terupdate</span></li>
           <li class="batas"><hr></li>
 
           <li class="nav-item">
@@ -121,23 +82,23 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ asset('admin/berita/jenis_berita/Layanan') }}" class="nav-link">
+            <a href="{{ asset('admin/berita/jenis_berita/Terupdate') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
-              <p>Layanan</p>
+              <p>Berita Terupdate</p>
             </a>
           </li>
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
-              <p>Board &amp; Team<i class="fas fa-angle-left right"></i></p>
+              <p>Staff<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="{{ asset('admin/staff') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Board &amp; Team</p></a>
+              <li class="nav-item"><a href="{{ asset('admin/staff') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Staff</p></a>
               </li>
-              <li class="nav-item"><a href="{{ asset('admin/staff/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah Board &amp; Team</p></a>
+              <li class="nav-item"><a href="{{ asset('admin/staff/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah Staff</p></a>
               </li>
-              <li class="nav-item"><a href="{{ asset('admin/kategori_staff') }}" class="nav-link"><i class="fa fa-tags nav-icon"></i><p>Kategori Board &amp; Team</p></a>
+              <li class="nav-item"><a href="{{ asset('admin/kategori_staff') }}" class="nav-link"><i class="fa fa-tags nav-icon"></i><p>Kategori Staff</p></a>
               </li>
             </ul>
           </li>
@@ -176,10 +137,6 @@
               <li class="nav-item"><a href="{{ asset('admin/konfigurasi/logo') }}" class="nav-link"><i class="fa fa-home nav-icon"></i><p>Ganti Logo</p></a>
               </li>
               <li class="nav-item"><a href="{{ asset('admin/konfigurasi/icon') }}" class="nav-link"><i class="fa fa-upload nav-icon"></i><p>Ganti Icon</p></a>
-              </li>
-              <li class="nav-item"><a href="{{ asset('admin/konfigurasi/email') }}" class="nav-link"><i class="fa fa-envelope nav-icon"></i><p>Email Setting</p></a>
-              </li>
-              <li class="nav-item"><a href="{{ asset('admin/rekening') }}" class="nav-link"><i class="fas fa-book nav-icon"></i><p>Rekening</p></a>
               </li>
             </ul>
           </li>

@@ -25,19 +25,7 @@
 <div class="row">
   <div class="col-md-4">
     <div class="input-group">
-      <span class="input-group-btn" >
-        <button class="btn btn-danger btn-sm" type="submit" name="hapus" onClick="check();" >
-          <i class="fa fa-trash"></i>
-        </button> 
-      </span>
-      <select name="id_kategori_staff" class="form-control form-control-sm">
-        <?php foreach($kategori_staff as $kategori_staff) { ?>
-          <option value="<?php echo $kategori_staff->id_kategori_staff ?>"><?php echo $kategori_staff->nama_kategori_staff ?></option>
-        <?php } ?>
-      </select>
-      <span class="input-group-btn" >
-        <button type="submit" class="btn btn-info btn-sm btn-flat" name="update">Update</button> 
-      </span>
+      
     </div>
   </div>
 
@@ -52,7 +40,7 @@
     </div>
     <div class="clearfix"><hr></div>
     <div class="table-responsive mailbox-messages">
-      <table id="example1" class="display table table-bordered table-sm" cellspacing="0" width="100%">
+      <table id="example12" class="display table table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
           <tr class="bg-info">
             <th width="5%" class="text-center">
@@ -96,8 +84,6 @@
                   <?php echo $staff->status_staff ?></a></td>
               <td><?php echo $staff->urutan ?></td>
               <td><div class="btn-group">
-                  <a href="{{ asset('admin/staff/detail/'.$staff->id_staff) }}" 
-                    class="btn btn-success btn-sm"><i class="fa fa-eye"></i> Detail</a>
                   <a href="{{ asset('admin/staff/edit/'.$staff->id_staff) }}" 
                     class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                     <a href="{{ asset('admin/staff/delete/'.$staff->id_staff) }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i></a>

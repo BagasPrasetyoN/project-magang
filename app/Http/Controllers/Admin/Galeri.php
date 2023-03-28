@@ -248,7 +248,7 @@ class Galeri extends Controller
                 'urutan'                => $request->urutan
             ]);
         }
-        return redirect('admin/galeri')->with(['sukses' => 'Data telah ditambah']);
+        return redirect('admin/galeri')->with(['sukses' => 'Data telah diubah']);
     }
 
     // Delete

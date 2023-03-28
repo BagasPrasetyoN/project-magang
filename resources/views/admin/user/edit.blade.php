@@ -44,7 +44,6 @@
 	<div class="col-sm-9">
 		<select name="akses_level" class="form-control">
 			<option value="Admin">Admin</option>
-			<option value="User" <?php if($user->akses_level=="User") { echo 'selected'; } ?>>User</option>
 		</select>
 	</div>
 </div>
@@ -62,7 +61,7 @@
 		<div class="form-group pull-right btn-group">
 			<input type="submit" name="submit" class="btn btn-primary " value="Simpan Data">
 			<input type="reset" name="reset" class="btn btn-success " value="Reset">
-			<a href="{{ asset('admin/user') }}" class="btn btn-danger">Kembali</a>
+			<a href="{{ asset('admin/dasbor') }}" class="btn btn-danger">Kembali</a>
 		</div>
 	</div>
 	<div class="clearfix"></div>

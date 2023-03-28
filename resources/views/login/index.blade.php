@@ -56,14 +56,6 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
           <div class="col-12">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
@@ -75,7 +67,7 @@
       <hr>
 
       <p class="text-center link-bawah">
-        <a href="{{ asset('/') }}">Back to Homepage</a> | <a href="{{ asset('login/forgot') }}">Forgot password?</a>
+        <a href="{{ asset('/') }}">Back to Homepage</a>
       </p>
       
     </div>

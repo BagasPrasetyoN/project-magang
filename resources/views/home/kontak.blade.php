@@ -41,32 +41,15 @@ $bg   = DB::table('heading')->where('halaman','Kontak')->orderBy('id_heading','D
       <div class="row">
          <div class="col-md-6">
             <div class="contact-form">
-               <ul class="cform">
-                  <li class="half pr-15">
-                     <input type="text" class="form-control" placeholder="Full Name">
-                  </li>
-                  <li class="half pl-15">
-                     <input type="text" class="form-control" placeholder="Email">
-                  </li>
-                  <li class="half pr-15">
-                     <input type="text" class="form-control" placeholder="Contact">
-                  </li>
-                  <li class="half pl-15">
-                     <input type="text" class="form-control" placeholder="Subject">
-                  </li>
-                  <li class="full">
-                     <textarea class="textarea-control" placeholder="Message"></textarea>
-                  </li>
-                  <li class="full">
-                     <input type="submit" value="Contact us" class="btn btn-info btn-lg btn-block">
-                  </li>
-               </ul>
-            </div>
-         </div>
-         <div class="col-md-6">
             <div class="google-map">
                <?php echo $site_config->google_map ?>
             </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <!-- <div class="google-map">
+               <?php echo $site_config->google_map ?>
+            </div> -->
          </div>
       </div>
    </div>

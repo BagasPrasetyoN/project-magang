@@ -32,7 +32,6 @@ $bg   = DB::table('heading')->where('halaman','Berita')->orderBy('id_heading','D
             </div>
             <!--Blog Small Post End--> 
           <?php } ?>
-
            </div>
          <div class="gt-pagination">
             {{ $galeris->links() }}

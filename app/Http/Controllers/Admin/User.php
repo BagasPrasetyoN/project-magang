@@ -21,7 +21,7 @@ class User extends Controller
         return view('admin/layout/wrapper',$data);
     }
 
-    // Index
+    // Edit
     public function edit($id_user)
     {
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
@@ -80,7 +80,7 @@ class User extends Controller
                 'nama'          => $request->nama,
                 'email'	        => $request->email,
                 'username'   	=> $request->username,
-                'password'      => sha1($request->password),
+                'password'      => ($request->password),
                 'akses_level'   => $request->akses_level,
                 'gambar'        => $input['nama_file']
             ]);
@@ -89,7 +89,7 @@ class User extends Controller
                 'nama'          => $request->nama,
                 'email'         => $request->email,
                 'username'      => $request->username,
-                'password'      => sha1($request->password),
+                'password'      => ($request->password),
                 'akses_level'   => $request->akses_level
             ]);
         }
@@ -129,7 +129,7 @@ class User extends Controller
                 'nama'          => $request->nama,
                 'email'         => $request->email,
                 'username'      => $request->username,
-                'password'      => sha1($request->password),
+                'password'      => ($request->password),
                 'akses_level'   => $request->akses_level,
                 'gambar'        => $input['nama_file']
             ]);
@@ -139,7 +139,7 @@ class User extends Controller
                 'nama'          => $request->nama,
                 'email'         => $request->email,
                 'username'      => $request->username,
-                'password'      => sha1($request->password),
+                'password'      => ($request->password),
                 'akses_level'   => $request->akses_level
             ]);
         }
